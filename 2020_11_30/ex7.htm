@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img swapper</title>
+    <script>
+        window.onload = () => {
+
+            let myImg = document.getElementById('image');
+            console.log(myImg)
+            let url1 = "https://cdn.spacetelescope.org/archives/images/wallpaper2/heic1509a.jpg"
+            let url2 = "https://cdn.spacetelescope.org/archives/images/wallpaper2/heic2007a.jpg"
+            myImg.onmouseover = () => {
+                myImg.src = url2
+            }
+
+            myImg.onmouseout = () => {
+                myImg.src = url1
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="image" src="https://cdn.spacetelescope.org/archives/images/wallpaper2/heic1509a.jpg"  style="width: 50%; margin: 0 auto; display: block;">
+</body>
+</html>

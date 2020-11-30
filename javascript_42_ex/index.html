@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 Exercícios</title>
+    <script src="js/exercises.js"></script>
+</head>
+<body onload="start()">
+    <div id="wrapper">
+        <ul><li><a href="#ex1">Ex1</a></li>
+        <li><a href="#ex2">Ex2</a></li>
+        <li><a href="#ex3">Ex3</a></li>
+        <li><a href="#ex4">Ex4</a></li>
+        <li><a href="#ex5">Ex5</a></li>
+        <li><a href="#ex6">Ex6</a></li>
+        <li><a href="#ex7">Ex7</a></li>
+        <li><a href="#ex8">Ex8</a></li>
+        <li><a href="#ex9">Ex9</a></li>
+        <li><a href="#ex10">Ex10</a></li>
+        <li><a href="#ex11">Ex11</a></li>
+        <li><a href="#ex12">Ex12</a></li>
+        <li><a href="#ex13">Ex13</a></li>
+        <li><a href="#ex14">Ex14</a></li>
+        <li><a href="#ex15">Ex15</a></li>
+        <li><a href="#ex16">Ex16</a></li>
+        <li><a href="#ex17">Ex17</a></li>
+        <li><a href="#ex18">Ex18</a></li>
+        <li><a href="#ex19">Ex19</a></li>
+        <li><a href="#ex20">Ex20</a></li>
+        <li><a href="#ex21">Ex21</a></li>
+        <li><a href="#ex22">Ex22</a></li>
+        <li><a href="#ex23">Ex23</a></li>
+        <li><a href="#ex24">Ex24</a></li>
+        <li><a href="#ex25">Ex25</a></li>
+        <li><a href="#ex26">Ex26</a></li>
+        <li><a href="#ex27">Ex27</a></li>
+        <li><a href="#ex28">Ex28</a></li>
+        <li><a href="#ex29">Ex29</a></li>
+        <li><a href="#ex30">Ex30</a></li>
+        <li><a href="#ex31">Ex31</a></li>
+        <li><a href="#ex32">Ex32</a></li>
+        <li><a href="#ex33">Ex33</a></li>
+        <li><a href="#ex34">Ex34</a></li>
+        <li><a href="#ex35">Ex35</a></li>
+        <li><a href="#ex36">Ex36</a></li>
+        <li><a href="#ex37">Ex37</a></li>
+        <li><a href="#ex38">Ex38</a></li>
+        <li><a href="#ex39">Ex39</a></li>
+        <li><a href="#ex40">Ex40</a></li>
+        <li><a href="#ex41">Ex41</a></li>
+        <li><a href="#ex42">Ex42</a></li></ul>
+        <div id="ex1" class="exercise">
+            <h1>Ex1 - random input guess</h1>
+            <p>Guess an even number from 1 to 10</p>
+            <input type="number" id="ex1-input" placeholder="number to guess">
+            <button id="ex1-btn" onclick="ex1GuessNumber()">Guess</button>
+            <span id='ex1-random-number'></span>
+            <button id="ex1-btn" onclick="ex1RandomGen()">Generate new number</button>
+            <p id="ex1-result"></p>
+        </div>
+        <div id="ex2" class="exercise">
+            <h1>Ex2 - How many days until Christmas</h1>
+            <p>There are <span id="ex2-days">0</span> day until Christmas</p>
+        </div> 
+        <div id="ex3" class="exercise">
+            <h1>Ex3 - multiplication/division 2numbers 2buttons</h1>
+            <input id="ex3-num1" type="number">
+            <input id="ex3-num2" type="number">
+            <p id="ex3-result"></p>
+            <button id="ex3-btn1" onclick="ex3('*')">Multiply</button>
+            <button id="ex3-btn2" onclick="ex3('/')">Divide</button>
+        </div>
+        <div id="ex4" class="exercise">
+            <h1>Ex4 - Celcius and Fahrenheit</h1>
+            <input type="number" id="ex4-temp">
+            <p id="ex4-result"></p>
+            <button id="ex4-celcius" onclick="convertTemp('C')">To &deg;C</button>
+            <button id="ex4-fahren" onclick="convertTemp('F')">To &deg;F</button>
+        </div>
+        <div id="ex5" class="exercise">
+            <h1>Ex5 - weird black magic math</h1>
+            <input type="number" id="ex5-input" onchange="ex5()">
+            <p id="ex5-result"></p>
+        </div>
+        <div id="ex6" class="exercise">
+            <h1>Ex6 - Sum two integers. If equal triple the sum</h1>
+            <input type="number" id="ex6-num1"  onchange="ex6()">
+            <input type="number" id="ex6-num2"  onchange="ex6()">
+            <p id="ex6-result"></p>
+        </div>
+        <div id="ex7" class="exercise">
+            <h1>Ex7 - Fifties</h1>
+            <input type="number" id="ex7-num1"  onchange="ex7()">
+            <input type="number" id="ex7-num2"  onchange="ex7()">
+            <p id="ex7-result"></p>
+        </div>
+        <div id="ex8" class="exercise">
+            <h1>Ex8 - Around 100 or 400?</h1>
+            <input type="number" id="ex8-input" onchange="ex8()">
+            <p id="ex8-result"></p>
+        </div>
+        <div id="ex9" class="exercise">
+        <h1>Ex9 - +/-</h1>
+            <input type="number" id="ex9-num1"  onchange="ex9()">
+            <input type="number" id="ex9-num2"  onchange="ex9()">
+            <p id="ex9-result"></p>
+        </div>
+        <div id="ex10" class="exercise">
+            <h1>Ex10 - Stringipy</h1>
+            <input type="text" id="ex10-input" onchange=ex10()>
+        </div>
+        <div id="ex11" class="exercise">
+            <h1>Ex11 - Swap first with last</h1>
+            <input type="text" id="ex11-input" onchange=ex11()>
+        </div>
+        <div id="ex12" class="exercise">
+            <h1>Ex12 - Divisible by 3 or 7?</h1>
+            <input type="number" min=1 id="ex12-input" onchange="ex12()">
+            <p id="ex12-result"></p>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+        <div class="exercise">
+            <h1>title_of_exercise</h1>
+        </div>
+    </div>
+</body>
+</html>

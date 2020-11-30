@@ -1,0 +1,93 @@
+
+/*Reset styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection { 
+    background-color: #003D66;
+    color: #F4EBD9;
+}
+/*font-size @ 62.5% para que o 1 rem seja 10px*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: sansation_bold, sans-serif;
+    background-color: #a39a92;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    border-radius: 100px;
+    width: 10rem;
+    padding: .8rem;
+    background-color: black;
+    border-color: black;
+    color: white;
+    font-weight: bold;
+}
+.button-inv {
+    border-radius: 100px;
+    width: 10rem;
+    padding: .8rem;
+    background-color: #A39A92;
+    border-color: black;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.button:hover {
+    color: #a39a92;
+    transform: scale(1.1);
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button-inv:hover {
+    transform: scale(1.1);
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:focus, .button-inv:focus {
+    outline: none !important;
+}
+
+input {
+    background-color: #F4EBD9;
+    border: 1px black solid;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+input:focus {
+    background-color: #F4EBD9;
+}
+
+#landing-page h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+#landing-page h2{
+    font-size: 2rem;
+}
+#landing-page {
+    text-align: center;
+    margin-top: 30vh;
+}
+
+#login-btn {
+    margin-top: 6rem;
+}
+
+@font-face {
+    font-family: sansation_bold;
+    src: url(./fonts/Sansation_Bold.ttf)
+}

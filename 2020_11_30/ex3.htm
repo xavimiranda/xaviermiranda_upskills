@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function writeTimesTable(num, min = 1, max = 12)
+        {
+            var timesTable = num;
+
+            let ul = document.querySelector('#show ul')
+            ul.innerHTML = "";
+
+            for (let timesBy = min; timesBy <= max; timesBy++){   
+                let li = document.createElement('li');
+                li.innerText = timesTable + " * " + timesBy + " = " + timesBy * timesTable;
+                ul.appendChild(li)
+            }
+        }
+
+        
+
+        window.onload = () => {
+            document.getElementById('btn').onclick = () => {
+                writeTimesTable(prompt("Enter number: "),prompt("lower limit: "),  prompt("upper limit:"));
+            };
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">Table</button>
+    <div id="show">
+        <ul style="list-style: none;">
+
+        </ul>
+    </div>
+</body>
+</html>

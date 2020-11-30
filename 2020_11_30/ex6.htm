@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse Link</title>
+    <script>
+        function reverseLinks() {
+            let anchorArr = document.querySelectorAll('#navbar a')
+            let navbar = document.getElementById('navbar');
+            navbar.innerHTML = '';
+            for(let i = anchorArr.length-1; i >= 0; i--) {
+                navbar.append(anchorArr[i])
+            }
+        }
+
+        function reverseLinks2() {
+            let anchorArr = document.links;
+            let string = "";
+            for(let i = anchorArr.length-1; i >= 0; i--) {
+                string += '<a href="' + anchorArr[i] + '">Link ' + i +'</a><br />'
+            }
+                document.write(string);
+        }
+
+    </script>
+</head>
+<body onload = "reverseLinks2()">
+    <nav id="navbar">
+        <a href="link0.htm">Link 0</a>
+        <a href="link1.htm">Link 1</a>
+        <a href="link2.htm">Link 2</a>
+        <a href="link3.htm">Link 3</a>
+        <a href="link4.htm">Link 4</a>
+        <a href="link5.htm">Link 5</a>
+        <a href="link6.htm">Link 6</a>
+        <a href="link7.htm">Link 7</a>
+        <a href="link8.htm">Link 8</a>
+        <a href="link9.htm">Link 9</a>
+    </nav>
+</body>
+</html>

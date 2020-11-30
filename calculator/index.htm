@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+        * / + - 
+        9 8 7 6 
+        5 4 3 2 
+        1 0 . = 
+        c 
+-->
+
+    <div id="calc">
+        <input id="display" type="text">
+        <button id="*" class="btn">*</button>
+        <button id="/" class="btn">/</button>
+        <button id="+" class="btn">+</button>
+        <button id="-" class="btn">-</button>
+        <button id="9" class="btn">9</button>
+        <button id="8" class="btn">8</button>
+        <button id="7" class="btn">7</button>
+        <button id="6" class="btn">6</button>
+        <button id="5" class="btn">5</button>
+        <button id="4" class="btn">4</button>
+        <button id="3" class="btn">3</button>
+        <button id="2" class="btn">2</button>
+        <button id="1" class="btn">1</button>
+        <button id="0" class="btn">0</button>
+        <button id="." class="btn">.</button>
+        <button id="=" onclick="calculate()">=</button>
+        <button id="C" onclick="clearDisplay()">C</button>
+    </div>
+    
+    <script>
+        let btns = document.getElementsByClassName('btn');
+        let display = document.getElementById('display');
+
+        let clicked = function(evnt) {
+            let textBtnClick = evnt.target.innerText
+            display.value += textBtnClick
+        }
+
+        for(btn in btns) {
+            btns[btn].onclick = clicked
+        }
+
+        function calculate() {
+            if(display.value != ''){
+
+                try {
+                    display.style = "border: 1px black solid"
+                    display.value = eval(display.value)
+                } catch (error) {
+                    display.style = "border: 1px red solid"
+                    clearDisplay()
+                }
+            }
+        }
+
+        function clearDisplay() {
+            display.value = ''
+        }
+
+    </script>
+</body>
+
+</html>

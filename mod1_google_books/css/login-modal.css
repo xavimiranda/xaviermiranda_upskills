@@ -1,0 +1,87 @@
+:root {
+    --bcg-color: #F4EBD9;
+
+}
+
+#login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+#login-modal h2 {
+    padding-bottom: 1.5rem;
+}
+
+#login-modal-content {
+    width: 80%;
+    max-width: 45rem;
+    height: auto;
+    max-height: 80%;
+    background-color: var(--bcg-color);
+    border: 1px solid #F4EBD9;
+    color: #a39a92;
+    border-radius: 20px;
+    margin: 5% auto;
+    padding: 1rem;
+    text-align: center;
+    overflow: scroll;
+}
+
+#register-btn, #back-to-login {
+    color: #a39a92; 
+    text-decoration: none;
+}
+
+#login-modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+#login-form-wrapper {
+    display: block;
+}
+
+#login-form, #reg-form {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin: auto;
+    row-gap: .7rem;
+}
+
+
+#login-modal label {
+    justify-self: end;
+    padding: .25rem;
+}
+
+#login-submit-btn, #register-submit-btn {
+    width: 8rem;
+    margin: auto;
+    grid-column: 1 / span 2;
+    padding: .25rem;
+}
+#login-modal a {
+    display: block;
+    padding: 1rem;
+}
+
+#register-form-wrapper {
+    display: none;
+}
+
+#reg-error-container, #login-error-container{
+    width: 50%;
+    text-align: left;
+    color: #6d212a;
+    margin: 2rem auto;
+}
+
+#error-container li {
+    padding: .25rem;
+}
