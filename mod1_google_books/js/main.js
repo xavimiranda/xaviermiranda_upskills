@@ -72,6 +72,8 @@ window.onload = () => {
     const favBtn = document.getElementById('favourites-btn');
     favBtn.onclick = () => {
         displayLibrary(Object.values(sessionInfo.favourites));
+        clearSearches();
+        document.getElementById('library-header').innerText = 'Your Favorites';
     };
 
     //search toggle
@@ -387,11 +389,12 @@ function setAppHeader() {
 
     sessionInfo.lastLogin = now; //update last login to this login
 }
+
 function clearSearches() {
 
     //clear search bars
     document.getElementById('book-search').value = '';
-
+    document.getElementById('library-header').innerText = '';
 }
 
 function clearLogin() {
