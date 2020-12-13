@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+:root {
+    --dark-green: #507e32;
+    --light-green: #70ad47;
+}
+
+#page-wrapper {
+    position: relative;
+}
+
+#page-wrapper h4 {
+    position: absolute;
+    top: .5em;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#game {
+    display: flex;
+    border: 2px solid blue;
+    padding: 2rem;
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+#lado-a {
+    width: 50%;
+    border-right: 1px solid lightblue;
+}
+
+#lado-b {
+    width: 50%;
+}
+
+table {
+    margin: 0 auto;
+    border-spacing: 1rem;
+}
+
+table td {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--light-green);
+    border: 2px solid var(--dark-green);
+}
+
+#lado-b td {
+    background-color: red;
+}
+
+button {
+    padding: .5em;
+    background-color: white;
+    border: 1px solid black;
+    font-weight: bolder;
+    color: var(--dark-green);
+}
+
+.hidden {
+    display: none !important;
+}
