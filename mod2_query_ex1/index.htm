@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Works Queries</title>
+</head>
+<body>
+    <img src="" alt="">
+    <ol>
+        <li>
+            <p>Write a SQL statement to display all the information of all salesmen</p>
+            <pre><code>
+                SELECT * FROM salesman;
+            </code></pre>
+            <img src="https://i.imgur.com/mBaSSdL.png">
+        </li>
+        <li>
+            <p>Write a SQL statement to display a string "This is SQL Exercise, Practice and Solution"</p>
+            <pre><code>
+            SELECT 'This is SQL Exercise, Practice and Solution' AS String;
+            </code></pre>
+            <img src="https://i.imgur.com/alvclRH.png">
+        </li>
+        <li>
+            <p>Write a query to display three numbers in three columns</p>
+            <pre><code>
+            SELECT 1, 2, 3;
+            </code></pre>
+            <img src="https://i.imgur.com/oGkljFA.png">
+        </li>
+        <li>
+            <p>Write a query to display the sum of two numbers 10 and 15 from RDMS sever.</p>
+            <pre><code>
+            SELECT 10 + 15;
+            </code></pre>
+            <img src="https://i.imgur.com/B4ilx40.png" alt="">
+        </li>
+        <li>
+            <p>Write a query to display the result of an arithmetic expression.</p>
+            <pre><code>
+            SELECT (10 + 15 - 5) * 2;
+            </code></pre>
+            <img src="https://i.imgur.com/s0pNVKO.png" alt="">
+        </li>
+        <li>
+            <p>Write a SQL statement to display specific columns like name and commission for all the salesmen.</p>
+            <pre><code>
+            SELECT name, commission FROM salesman;
+            </code></pre>
+            <img src="https://i.imgur.com/Gr5CBLD.png">
+        </li>
+        <li>
+            <p>Write a query to display the columns in a specific order like order date, salesman id, order number and purchase amount from for all the orders.</p>
+            <pre><code>
+            SELECT orderDate, salesmanId, orderId, purchaseAmt
+            FROM orders;
+            </code></pre>
+            <img src="https://i.imgur.com/IIIQw1M.png">
+        </li>
+        <li>
+            <p>Write a query which will retrieve the value of salesman id of all salesmen, getting orders from the customers in orders table without any repeats.</p>
+            <pre><code>
+            SELECT DISTINCT salesmanId, customerId
+            FROM orders; 
+            </code></pre>
+            <img src="https://i.imgur.com/qoGKDrJ.png">
+        </li>
+        <li>
+            <p>Write a SQL statement to display names and city of salesman, who belongs to the city of Paris.</p>
+            <pre><code>
+            SELECT name, city
+            FROM salesman
+            WHERE city = 'Paris';                
+            </code></pre>
+            <img src="https://i.imgur.com/YmUSx22.png">
+        </li>
+        <li>
+            <p>Write a SQL statement to display all the information for those customers with a grade of 200.</p>
+            <pre><code>
+            SELECT *
+            FROM customers
+            WHERE grade = 200;                               
+            </code></pre>
+            <img src="https://i.imgur.com/HVmjtlM.png">
+        </li>
+        <li>
+            <p>Write a SQL query to display the order number followed by order date and the purchase amount for each order which will be delivered by the salesman who is holding the ID 5001.  </p>
+            <pre><code>
+            SELECT orderId, orderDate, purchaseAmt
+            FROM orders
+            WHERE salesmanId = 5001;                                            
+            </code></pre>
+            <img src="https://i.imgur.com/gCMBagk.png">
+        </li>
+
+    </ol>
+</body>
+</html>
+
