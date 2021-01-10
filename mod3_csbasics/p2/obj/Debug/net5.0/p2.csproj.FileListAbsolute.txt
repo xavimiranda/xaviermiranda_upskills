@@ -1,0 +1,16 @@
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.csprojAssemblyReference.cache
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.AssemblyInfoInputs.cache
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.AssemblyInfo.cs
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.csproj.CoreCompileInputs.cache
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.exe
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.deps.json
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.runtimeconfig.json
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.runtimeconfig.dev.json
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.dll
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\ref\p2.dll
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\bin\Debug\net5.0\p2.pdb
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.dll
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\ref\p2.dll
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.pdb
+C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p2\obj\Debug\net5.0\p2.genruntimeconfig.cache
