@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barba\\Desktop\\Xavit\\Coding\\Upskill .NET\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj": {}
+    "C:\\Users\\xavier.miranda\\Desktop\\XM\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barba\\Desktop\\Xavit\\Coding\\Upskill .NET\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj": {
+    "C:\\Users\\xavier.miranda\\Desktop\\XM\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barba\\Desktop\\Xavit\\Coding\\Upskill .NET\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj",
+        "projectUniqueName": "C:\\Users\\xavier.miranda\\Desktop\\XM\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj",
         "projectName": "p4",
-        "projectPath": "C:\\Users\\barba\\Desktop\\Xavit\\Coding\\Upskill .NET\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj",
-        "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barba\\Desktop\\Xavit\\Coding\\Upskill .NET\\xaviermiranda_upskills\\mod3_csbasics\\p4\\obj\\",
+        "projectPath": "C:\\Users\\xavier.miranda\\Desktop\\XM\\xaviermiranda_upskills\\mod3_csbasics\\p4\\p4.csproj",
+        "packagesPath": "C:\\Users\\xavier.miranda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xavier.miranda\\Desktop\\XM\\xaviermiranda_upskills\\mod3_csbasics\\p4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\xavier.miranda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

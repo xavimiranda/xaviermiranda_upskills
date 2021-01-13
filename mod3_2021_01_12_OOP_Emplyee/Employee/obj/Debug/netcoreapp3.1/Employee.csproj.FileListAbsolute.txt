@@ -1,0 +1,13 @@
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.exe
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.deps.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.runtimeconfig.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.runtimeconfig.dev.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\bin\Debug\netcoreapp3.1\Employee.pdb
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.csprojAssemblyReference.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.AssemblyInfoInputs.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.AssemblyInfo.cs
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.csproj.CoreCompileInputs.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.pdb
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_2021_01_12_OOP_Emplyee\Employee\obj\Debug\netcoreapp3.1\Employee.genruntimeconfig.cache

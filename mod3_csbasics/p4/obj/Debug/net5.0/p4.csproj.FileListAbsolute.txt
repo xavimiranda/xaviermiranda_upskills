@@ -14,3 +14,19 @@ C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csb
 C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\ref\p4.dll
 C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.pdb
 C:\Users\barba\Desktop\Xavit\Coding\Upskill .NET\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.genruntimeconfig.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.exe
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.deps.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.runtimeconfig.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.runtimeconfig.dev.json
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\ref\p4.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\bin\Debug\net5.0\p4.pdb
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.csprojAssemblyReference.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.AssemblyInfoInputs.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.AssemblyInfo.cs
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.csproj.CoreCompileInputs.cache
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\ref\p4.dll
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.pdb
+C:\Users\xavier.miranda\Desktop\XM\xaviermiranda_upskills\mod3_csbasics\p4\obj\Debug\net5.0\p4.genruntimeconfig.cache
