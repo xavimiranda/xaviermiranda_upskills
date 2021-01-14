@@ -18,7 +18,7 @@ namespace Exercicios
             //Console.WriteLine("\n==========Rectangle==============");
             //var rect = new Rectangle(100, 50);
             //Console.WriteLine(rect);
-            Console.WriteLine("\n=========Numero Inteiro=======");
+            //Console.WriteLine("\n=========Numero Inteiro=======");
             
             
         }
