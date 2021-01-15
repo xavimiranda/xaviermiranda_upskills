@@ -13,18 +13,26 @@ namespace Exercicios
         ///<summary>Return multiplication and division of two given numbers</summary>
         public static Tuple<double, double> MultAndDiv(double num1, double num2) => Tuple.Create<double, double>(num1 * num2, num1 / num2);
 
-        public static string GuessingGame()
-        {
-            int guess = GetIntFromUser();
-            return GuessingGame(guess);    
-        }
-        public static string GuessingGame(int guess)
+        public static void GuessingGame()
         {
             Random rand = new Random();
             int target = rand.Next(1, 11);
-
-            return target == guess ? "Matched" : "Not Matched";
+            int numGuesses = 3;
+            while (numGuesses != 0) 
+            {
+                Console.Write($"Tem {numGuesses} tentativas para adivinhar um número de 1 a 10 > ");
+                int guess = GetIntFromUser(1, 10);
+                if (guess == target)
+                { 
+                    Console.WriteLine("Acertou");
+                    return;
+                }
+                else
+                    numGuesses--;
+            }
+            Console.WriteLine($"Errou. O número era {target}");
         }
+
         public static void FindTargetsWithWhile(int[] numbers)
         {
             int index = 0;
@@ -75,12 +83,52 @@ namespace Exercicios
             if (!foundTarget)
                 Console.WriteLine("Didn't find any targets");
         }
-        private static int GetIntFromUser()
+
+        /// <summary>
+        /// Tries to read an integer from the user and checks it is within the boudaries
+        /// </summary>
+        public static void PlayBingo(int numGuesses = 3)
+        {
+            Console.WriteLine( "================================BINGO======================================");
+            Console.WriteLine($"Tem {numGuesses} tentativas para advinhar um número sorteado de -100 a 100.");
+            int[] guesses = new int[numGuesses];
+            //get 3 inputs from user
+            for (int i = 0; i < numGuesses; i++)
+            {
+                Console.Write($"{i+1}ª > ");
+                guesses[i] = GetIntFromUser(-100, 100);
+            }
+            //generate random number between -100 and 100
+            var rand = new Random();
+            int target = rand.Next(-100, 101);
+
+            int closestGuess = int.MaxValue;
+            int closesDist = int.MaxValue;
+
+            foreach(int guess in guesses)
+            {
+                if(guess == target)
+                {
+                    Console.WriteLine($"BINGO! {target}");
+                    return;
+                }
+                else
+                {
+                    if (Math.Abs(target - guess) < closesDist)
+                    {
+                        closesDist = Math.Abs(target - guess);
+                        closestGuess = guess;
+                    }
+                }
+            }
+            Console.WriteLine($"A tentativa mais próxima de {target} foi {closestGuess}");
+            Console.WriteLine("===========================================================================");
+        }
+        private static int GetIntFromUser(int min, int max)
         {
             while (true)
             {
-                Console.Write("Please try to guess an integer from 1 to 10 > ");
-                if (int.TryParse(Console.ReadLine(), out int guess) && (guess >= 1 && guess <= 10))
+                if (int.TryParse(Console.ReadLine(), out int guess) && (guess >= min && guess <= max))
                 {
                     return guess;
                 }
@@ -107,6 +155,5 @@ namespace Exercicios
             }
             return result.ToArray();
         }
-
     }
 }

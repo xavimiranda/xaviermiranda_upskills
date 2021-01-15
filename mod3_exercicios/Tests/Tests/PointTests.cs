@@ -39,7 +39,13 @@ namespace Tests
 
             Assert.IsTrue(p1 == p2);
         }
+        [Test]
         public void InequalityTest()
-        { }
+        {
+            var p1 = new Point(2, 2);
+            var p2 = new Point(1, 2);
+
+            Assert.IsTrue(p1 != p2);
+        }
     }
 }
