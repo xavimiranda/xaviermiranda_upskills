@@ -55,6 +55,10 @@ namespace Exercicios
             FindTargetsWithWhile(GetArrayIntFromUser());
         }
 
+        public static void FindTargetsWithFor() => FindTargetsWithFor(GetArrayIntFromUser());
+
+        public static void FindTargetsWithForeach() => FindTargetsWithForeach(GetArrayIntFromUser());
+
         public static void FindTargetsWithFor(int[] numbers)
         {
             for (int i = 0; i < numbers.Length; i++)
@@ -124,7 +128,7 @@ namespace Exercicios
             Console.WriteLine($"A tentativa mais próxima de {target} foi {closestGuess}");
             Console.WriteLine("===========================================================================");
         }
-        private static int GetIntFromUser(int min, int max)
+        public static int GetIntFromUser(int min = int.MinValue, int max = int.MaxValue)
         {
             while (true)
             {
