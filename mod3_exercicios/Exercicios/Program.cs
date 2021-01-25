@@ -62,6 +62,7 @@ namespace Exercicios
             Console.WriteLine("12) NumeroInteiro");
             Console.WriteLine("13) Ponto");
             Console.WriteLine("14) Calculadora");
+            Console.WriteLine("15) Livros");
             Console.WriteLine("00) SAIR");
             Console.Write("Escolha a opção > ");
         }
@@ -117,6 +118,9 @@ namespace Exercicios
                         case 14:
                             TestaCalculadora();
                             break;
+                        case 15:
+                            TestaLivros();
+                            break;
                         case 0:
                             quitProgram = true;
                             break;
@@ -138,6 +142,16 @@ namespace Exercicios
                 choice = true;
             }
             return quitProgram;
+        }
+
+        private static void TestaLivros()
+        {
+            Livro livro1 = new Livro("Professional C#", "Christian Nagel");
+            Livro livro2 = new Livro("Fundamentos da Programação", "António José Mendes", "Maria José Marcelino");
+            Console.WriteLine($"{livro1} tem {livro1.NumAutores} autor.");
+            Console.WriteLine($"{livro2} tem {livro2.NumAutores} autores.");
+            string? name = null;
+            Console.WriteLine(name);
         }
 
         private static void TestaCalculadora()

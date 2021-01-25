@@ -50,7 +50,6 @@ namespace Tests
         {
             Point[] pts1 = { new Point(1, 2), new Point(2, 3), new Point(3, 3) };
             Point[] pts2 = { new Point(1, 2), new Point(2, 3), new Point(3, 3) };
-            pts1[1].Equals
             Assert.IsTrue(pts1.SequenceEqual(pts2));
         }
     }
