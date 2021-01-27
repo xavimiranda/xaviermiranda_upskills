@@ -1,0 +1,50 @@
+[
+  {
+    "Ano": 2001,
+    "Disco": 8,
+    "Ecran": 5,
+    "Marca": "Samsung",
+    "Memoria": 16,
+    "Modelo": "SG9",
+    "Processador": "xyz",
+    "So": "so294",
+    "Touch": true,
+    "Wireless": true
+  },
+  {
+    "Ano": 2015,
+    "Disco": 8,
+    "Ecran": 5,
+    "Marca": "Huawei",
+    "Memoria": 16,
+    "Modelo": "Y6II",
+    "Processador": "ghj",
+    "So": "so294",
+    "Touch": true,
+    "Wireless": true
+  },
+  {
+    "Ano": 2020,
+    "Disco": 8,
+    "Ecran": 5,
+    "Marca": "Samsung",
+    "Memoria": 16,
+    "Modelo": "SG900",
+    "Processador": "CS20",
+    "So": "so3000",
+    "Touch": true,
+    "Wireless": true
+  },
+  {
+    "Ano": 2005,
+    "Disco": 8,
+    "Ecran": 5,
+    "Marca": "Apple",
+    "Memoria": 16,
+    "Modelo": "IP5",
+    "Processador": "OSM",
+    "So": "OSM2",
+    "Touch": true,
+    "Wireless": true
+  }
+]

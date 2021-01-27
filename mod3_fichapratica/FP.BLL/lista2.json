@@ -1,0 +1,26 @@
+[
+  {
+    "Ano": 1998,
+    "Disco": 2,
+    "Ecran": 3,
+    "Marca": "Nokia",
+    "Memoria": 16,
+    "Modelo": "331",
+    "Processador": "lol",
+    "So": "5h17",
+    "Touch": false,
+    "Wireless": false
+  },
+  {
+    "Ano": 1998,
+    "Disco": 2,
+    "Ecran": 3,
+    "Marca": "Nokia",
+    "Memoria": 16,
+    "Modelo": "331",
+    "Processador": "lol",
+    "So": "5h17",
+    "Touch": false,
+    "Wireless": false
+  }
+]
