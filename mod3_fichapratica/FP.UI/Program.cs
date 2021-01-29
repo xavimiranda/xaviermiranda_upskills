@@ -11,9 +11,9 @@ namespace FP.UI
     {
         static void Main(string[] args)
         {
-            //criar bd e verificar que tem 0 objectos
-            BD bd = new BD("BD.json");
-            Console.WriteLine($"A base de dados tem {bd.GetSize()} objectos");
+            //criar repositorio e verificar quantos objectos existem
+            var telRepo = CriarRepositorio("BD.Json");
+            Console.WriteLine($"A base de dados tem {telRepo.GetSize()} objectos");
 
             //importa duas lista de telemoveis de ficheiros diferents.
             //a class telemóvel não deve ser responsável por retornar uma coleção de telemóveis
@@ -57,13 +57,13 @@ namespace FP.UI
             tm1.MergeWith(tm2);
 
             //inserir a lista na bd
-            bd.Insert(tm1);
-            Console.WriteLine($"A base de dados tem {bd.GetSize()} objectos");
+            telRepo.Insert(tm1);
+            Console.WriteLine($"A base de dados tem {telRepo.GetSize()} objectos");
 
 
             //aqui estou a passar uma funçao anónima para ter liberdade na regra que se passa.
             //alternativamente pode ser feito parseando uma string no formato "Atributo=Valor"
-            List<Telemovel> tmbd = bd.DeleteFrom(t => t.Atributos.Marca == "Apple"); //Lê-se para um telemovel t onde t.Atributos.Marca é igual a "Apple"
+            List<Telemovel> tmbd = telRepo.DeleteFrom(t => t.Atributos.Marca == "Apple"); //Lê-se para um telemovel t onde t.Atributos.Marca é igual a "Apple"
             foreach(var telemovel in tmbd)
             {
                 Console.WriteLine($"Modelo: {telemovel.Atributos.Modelo}");
@@ -71,7 +71,7 @@ namespace FP.UI
             Console.WriteLine($"Foram eliminados {tmbd.Count} objectos.");
 
 
-            tmbd = bd.Select(t => t.Atributos.Modelo == "Huawei");
+            tmbd = telRepo.Select(t => t.Atributos.Modelo == "Huawei");
             foreach (var telemovel in tmbd)
             {
                 Console.WriteLine($"Modelo: {telemovel.Atributos.Modelo}");
@@ -79,7 +79,7 @@ namespace FP.UI
             Console.WriteLine($"Foram selecionados {tmbd.Count} objectos");
 
             //Mudar nome para SelectAll ???
-            tmbd = bd.Select();
+            tmbd = telRepo.SelectAll();
             foreach (var telemovel in tmbd)
             {
                 Console.WriteLine($"Modelo: {telemovel.Atributos.Modelo}");
@@ -90,12 +90,16 @@ namespace FP.UI
             Console.ReadLine();
         }
 
-
+        private static ITelemovelRepository CriarRepositorio(string path)
+        {
+            return new JsonTelemovelRepository(path);
+        }
     }
+
+
     static class ListTelemovelExtensions
     {
-        public static void MergeWith(this List<Telemovel> tm1, List<Telemovel> tm2) => tm1.AddRange(tm2);
-
+        public static void MergeWith(this List<Telemovel> tm1, List<Telemovel> tm2) => tm1.AddRange(tm2); 
     }
 }
     

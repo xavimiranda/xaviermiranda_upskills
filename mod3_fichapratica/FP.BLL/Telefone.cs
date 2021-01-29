@@ -46,6 +46,7 @@ namespace FP.BLL
         public Telefone(AtributosTelefone atributos)
         {
             Atributos = atributos;
+            TempoLigado = 1;
         }
     }
 }

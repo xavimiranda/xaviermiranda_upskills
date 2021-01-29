@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FP.DAL\FP.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="lista1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
