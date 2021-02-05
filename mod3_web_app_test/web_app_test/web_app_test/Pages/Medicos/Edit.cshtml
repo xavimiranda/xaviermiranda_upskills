@@ -1,0 +1,27 @@
+﻿@page "{medicoId:int?}"
+@model web_app_test.Pages.Medicos.EditModel
+@{
+}
+
+<h2>@Model.Medico.Nome</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Medico.Id" />
+
+    <div class="form-control">
+        <label asp-for="Medico.Nome"></label>
+        <input asp-for="Medico.Nome" />
+
+    </div>
+    <div class="form-control">
+        <label asp-for="Medico.DataNascimento">Data de Nascimento</label>
+        <input asp-for="Medico.DataNascimento" />
+    </div>
+    <div class="form-control">
+        <label asp-for="Medico.Ativo"></label>
+        <input asp-for="Medico.Ativo" />
+    </div>
+
+    <button class="btn btn-primary">Submeter</button>
+</form>

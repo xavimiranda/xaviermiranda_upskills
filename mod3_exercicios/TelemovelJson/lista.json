@@ -1,0 +1,34 @@
+﻿[
+  {
+
+    "Marca": "Huawey",
+    "Modelo": "YII",
+    "Ano": "2013",
+    "Ecra": 5.5,
+    "Memoria": 8,
+    "Disco": 8,
+    "Processador": "XYZ",
+    "OS": "Doçaria"
+  },
+  {
+
+    "Marca": "Samsung",
+    "Modelo": "S9",
+    "Ano": "2018",
+    "Ecra": 7,
+    "Memoria": 16,
+    "Disco": 16,
+    "Processador": "XYZ",
+    "OS": "Lolipop"
+  },
+  {
+    "Marca": "Nokia",
+    "Modelo": "Z30",
+    "Ano": "2015",
+    "Ecra": 6,
+    "Memoria": 8,
+    "Disco": 8,
+    "Processador": "XYZ",
+    "OS": "Doçaria"
+  }
+]

@@ -1,0 +1,15 @@
+﻿@page
+@model web_app_test.Pages.BDModel
+@{
+
+}
+<h2>BD</h2>
+@Model.CmdExecute("SELECT * FROM leitores");
+@foreach (var row in Model.Linhas)
+{
+    <table>
+        <tr>
+            <td>@row</td>
+        </tr>
+    </table>
+}
