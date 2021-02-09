@@ -1,0 +1,33 @@
+﻿@page
+@model web_app_test.Pages.Alineas.Alinea2Model
+@{
+    Layout = "_Layout_Alineas";
+
+}
+
+<h2>Consultas por Mes/Medico até ao fim do ano</h2>
+<form method="post">
+    <div class="form-control">
+
+        <label class="form-label" asp-for="MedicoId">Nº Medico</label> 
+        <select class="form-select" asp-for="MedicoId" asp-items="@Model.MedicosAtivos;">
+        </select>
+        <button type="submit" class="btn btn-info">Mostrar</button>
+    </div>
+</form>
+
+    @if(Model.MedicoId != 0)
+    {
+        <table class="table">
+            @for (int i = 0; i < Model.ConsultasPorMes.Length; i++)
+            {
+
+                <tr>
+                    
+                    <td>@Model.Meses[i]</td>
+                    <td>@Model.ConsultasPorMes[i]</td>
+
+                </tr>
+            }
+        </table>
+    }

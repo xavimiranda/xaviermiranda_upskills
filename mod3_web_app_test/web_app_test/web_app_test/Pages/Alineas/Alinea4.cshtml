@@ -1,0 +1,48 @@
+﻿@page
+@model web_app_test.Pages.Alineas.Alinea4Model
+@{
+    Layout = "_Layout_Alineas";
+}
+
+<h2>Excluir Taxa a todos os pacientes, na semana do respectivo aniversário até ao final do ano</h2>
+@if (TempData["Message"] != null)
+{
+   <div class="alert alert-info">
+        <p>@TempData["Message"]</p>
+    </div> 
+}
+
+@if (Model.Consultas.Count > 0)
+{
+    <h3>Consultas afetadas:</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td scope="col">Data Consulta</td>
+                <td scope="col">Epecialidade</td>
+                <td scope="col">Paciente</td>
+                <td scope="col">Data de Nascimento</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var consulta in Model.Consultas)
+            {
+                 var paciente = Model.Pacientes.Find(p => p.Id == consulta.Id_Paciente);
+                 <tr>
+                     <td>@consulta.Data_Consulta.Date</td>
+                     <td>Especialidade</td>
+                     <td>@paciente.Nome</td>
+                     <td>@paciente.DataNascimento.Date</td>
+                 </tr>
+            }
+        </tbody>
+    </table>
+    <form method="get">
+        <input asp-for="ExcluirTaxas" type="hidden" value="@true" />
+        <button type="submit" class="btn btn-primary">Deseja excluir as Taxas às consultas acima?</button>
+    </form>
+}
+else
+{
+    <p>Não existem consultas que correspodem aos critérios</p>	            
+}

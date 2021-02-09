@@ -1,0 +1,21 @@
+﻿@page
+@model web_app_test.Pages.Alineas.Alinea1Model
+@{
+    Layout = "_Layout_Alineas";
+}
+
+<h2>Médicos mais novo e mais velho</h2>
+
+<table class="table">
+
+    <tr>
+        <td><b>Mais Novo</b></td>
+        <td>@Model.MaisNovo.Nome</td>
+        <td>@Model.MaisNovo.DataNascimento</td>
+    </tr>
+    <tr>
+        <td><b>Mais Velho</b></td>
+        <td>@Model.MaisVelho.Nome</td>
+        <td>@Model.MaisVelho.DataNascimento</td>
+    </tr>
+</table>

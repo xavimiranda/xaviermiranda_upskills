@@ -1,0 +1,33 @@
+﻿@page
+@model web_app_test.Pages.Alineas.Alinea3Model
+@{
+    Layout = "_Layout_Alineas";
+}
+
+<h2>Consultas que faltam mês corrente</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Data</td>
+            <td>Medico</td>
+            <td>Paciente</td>
+            <td>Especialidade</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var consulta in Model.Consultas)
+    {
+
+        var medico = Model.Medicos.First(m => consulta.Id_Medico == m.Id);
+        var paciente = Model.Pacientes.First(p => p.Id == consulta.Id_Paciente);
+        var especialidade = Model.Especialidades.First(e => e.Id == consulta.Id_Especialidade);
+
+        <tr>
+            <td>@consulta.Data_Consulta</td>
+            <td><a asp-page="../Medicos/Edit/" asp-route-medicoId="@medico.Id">@medico.Nome</a></td>
+            <td>@paciente.Nome</td>
+            <td>@especialidade.Nome</td>
+        </tr>
+    }
+    </tbody>
+</table>

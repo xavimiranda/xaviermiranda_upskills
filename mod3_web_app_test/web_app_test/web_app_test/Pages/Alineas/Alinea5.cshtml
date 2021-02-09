@@ -1,0 +1,35 @@
+﻿@page
+@model web_app_test.Pages.Alineas.Alinea5Model
+@{
+    Layout = "_Layout_Alineas";
+}
+
+<h2>Guardar histórico para ano</h2>
+<form method="post">
+    <input asp-for="Ano" />
+    <button type="submit" class="btn btn-primary">Guardar Histórico</button>
+</form>
+<h3>Históricos guardados</h3>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td scope="col">ID</td>
+            <td scope="col">Ano</td>
+            <td scope="col">NumConsultas</td>
+            <td scope="col">Valor Com Taxa</td>
+            <td scope="col">Valor Sem Taxa</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Hist)
+        {
+            var items = row.ItemArray;
+            <tr>
+                @for (int i = 0; i < items.Length; i++)
+                {
+                    <td>@items[i]</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

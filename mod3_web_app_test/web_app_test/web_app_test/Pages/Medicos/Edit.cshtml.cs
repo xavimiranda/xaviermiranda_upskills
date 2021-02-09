@@ -11,12 +11,17 @@ namespace web_app_test.Pages.Medicos
 {
     public class EditModel : PageModel
     {
+        private readonly HospDB db;
+
         [BindProperty]
         public Medico Medico { get; set; }
+        public EditModel(HospDB db)
+        {
+            this.db = db;
+        }
         public void OnGet(int? medicoId)
         {
-            var db = new HospDB();
-
+            
             if (medicoId.HasValue)
                 Medico = db.GetMedicoById(medicoId.Value);
             else
@@ -26,7 +31,7 @@ namespace web_app_test.Pages.Medicos
 
         public IActionResult OnPost()
         {
-            var db = new HospDB();
+          
 
             if (Medico.Id != 0)
             {

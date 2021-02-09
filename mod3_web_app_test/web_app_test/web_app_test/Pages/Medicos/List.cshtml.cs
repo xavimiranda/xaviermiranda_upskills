@@ -11,11 +11,18 @@ namespace web_app_test.Pages.Medicos
 {
     public class ListModel : PageModel
     {
+        private readonly HospDB db;
+
         public List<Medico> Medicos { get; set; }
+        public ListModel(HospDB db)
+        {
+            this.db = db;
+        }
         public void OnGet()
         {
-            HospDB db = new HospDB();
+            
             Medicos = db.GetMedicos();
+
         }
     }
 }
