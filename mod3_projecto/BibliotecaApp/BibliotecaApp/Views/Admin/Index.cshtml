@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Leitor>
+
+<h1>Lista de Leitores</h1>
+<a asp-action="Create" class="btn btn-primary">Criar um Leitor</a>
+
+<table class="table table-striped">
+    <tr>
+        <td colspan="col">Nome Usuário</td>
+        <td colspan="col">Email</td>
+        <td colspan="col">Actualizar</td>
+    </tr>
+    @foreach (var leitor in Model)
+    {
+        <tr>
+            <td>@leitor.UserName</td>
+            <td>@leitor.Email</td>
+            <td>
+                <a class="btn btn-primary" asp-action="Update" asp-route-id="@leitor.Id">Actualizar</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -17,8 +17,8 @@ namespace BibliotecaApp.Models
         [DataType(DataType.DateTime)]
         public DateTime Nascimento { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime Obito { get; set; }
+        [DataType(DataType.DateTime), ]
+        public DateTime? Obito { get; set; }
 
         public List<Obra> Obras { get; set; } = new List<Obra>();
     }

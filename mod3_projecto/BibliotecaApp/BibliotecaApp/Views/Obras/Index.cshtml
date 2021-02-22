@@ -1,0 +1,22 @@
+﻿@model ObrasViewModel
+<h2>Pesquise por uma obra:</h2>
+<form asp-action="Search">
+    <div class="form-group">
+        <label asp-for="SearchTitulo">Titulo</label>
+        <input asp-for="SearchTitulo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SearchAutor">Autor</label>
+        <input asp-for="SearchAutor" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SearchAno">Ano de Publicação</label>
+        <input asp-for="SearchAno" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Procurar</button>
+</form>
+
+@foreach (var obra in Model.Obras)
+{
+    <partial name="_ObraCard" model="@obra" />
+}

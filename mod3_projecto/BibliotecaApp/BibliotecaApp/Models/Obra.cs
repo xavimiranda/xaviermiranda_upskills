@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,6 +27,8 @@ namespace BibliotecaApp.Models
         public string Isbn10 { get; set; }
 
         public string Isbn13 { get; set; }
+        [DefaultValue("getutcdate()")]
+        public DateTime AdicionadoEm { get; set; }
 
         public Classificacao Classificacao { get; set; }
 

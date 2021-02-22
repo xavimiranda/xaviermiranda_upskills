@@ -30,8 +30,13 @@ namespace BibliotecaApp
             services.AddDbContext<BibliotecaDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BibliotecaConnectionString")
             ));
+            services.AddScoped<INucleosRepository, NucleosRepository>();
+            services.AddScoped<IObrasRepository, ObrasRepository>();
+            services.AddScoped<IClassificacaoRepository, ClassificacaoRepository>();
+            services.AddScoped<IAutoresRepository, AutoresRepository>();
             services.AddIdentity<Leitor, IdentityRole>().AddEntityFrameworkStores<BibliotecaDbContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews();
+            services.AddRazorPages();
             
         }
 
@@ -41,6 +46,7 @@ namespace BibliotecaApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {
@@ -53,8 +59,8 @@ namespace BibliotecaApp
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

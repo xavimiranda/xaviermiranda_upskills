@@ -1,0 +1,50 @@
+﻿@model RoleUpdateViewModel
+
+<h1>Lista de membros <i>@Model.Role.Name</i></h1>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.RoleId" />
+
+    <h2>Adicionar a <i>@Model.Role.Name</i></h2>
+    <table class="table table-striped table-sm">
+        @if (Model.NonMembers.Count() == 0)
+        {
+            <tr><td colspan="2">All Users Are Members</td></tr>
+        }
+        else
+        {
+            @foreach (Leitor leitor in Model.NonMembers)
+            {
+                <tr>
+                    <td>@leitor.UserName</td>
+                    <td>
+                        <input type="checkbox" name="AddIds" value="@leitor.Id">
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <h2>Remover de <i>@Model.Role.Name</i></h2>
+    <table class="table table-striped table-sm">
+        @if (Model.Members.Count() == 0)
+        {
+            <tr><td colspan="2">Nenhum utilizador é membro</td></tr>
+        }
+        else
+        {
+            @foreach (Leitor leitor in Model.Members)
+            {
+                <tr>
+                    <td>@leitor.UserName</td>
+                    <td>
+                        <input type="checkbox" name="RemoveIds" value="@leitor.Id">
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <button type="submit" class="btn btn-primary">Guardar alterações</button>
+</form>

@@ -1,0 +1,24 @@
+﻿@model Obra 
+
+<div>
+    <img src="@Model.Imagem" alt="@Model.Titulo">
+    <div>
+        <h5 class="card-title">@Model.Titulo</h5>
+        @foreach (var autor in Model.Autores)
+        {
+            <h6 class="card-subtitle mb-2 text-muted">@autor.Nome</h6>
+        }
+        <p><b>@Model.AnoPublicação</b></p>
+        @if (Model.Classificacao != null)
+        {
+            <p>@Model.Classificacao.Nome</p>
+        }
+    </div>
+    <div>
+        @if( Model.Autores.Count == 0 )
+        {
+            <p class="text-info">Esta obra não tem um Autor associado. Adicione um autor clicando no botão abaixo.</p>
+        }
+        <a asp-action="AddAutor" asp-route-id="@Model.Id" class="btn btn-primary">Adicionar autores a esta obra</a>
+    </div>
+</div>

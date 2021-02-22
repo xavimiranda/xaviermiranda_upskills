@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace BibliotecaApp.Models.Data
 {
-    interface INucleosRepository
+    public interface INucleosRepository
     {
+        IEnumerable<Nucleo> GetAllNucleos();
+        Nucleo GetNucleosById(int id);
+        void CreateNucleo(Nucleo nucleo);
+        void RemoveNucleo(int id);
     }
 }

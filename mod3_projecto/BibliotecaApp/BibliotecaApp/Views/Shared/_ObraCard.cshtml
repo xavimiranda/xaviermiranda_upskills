@@ -1,0 +1,18 @@
+﻿@model Obra
+
+<div class="card" style="width: 18rem;">
+    <img src="@Model.Imagem" class="card-img-top" alt="@Model.Titulo">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Titulo</h5>
+        @foreach (var autor in Model.Autores)
+        {
+            <h6 class="card-subtitle mb-2 text-muted">@autor.Nome</h6>
+        }
+        <p><b>@Model.AnoPublicação</b></p>
+        @if (Model.Classificacao != null)
+        { 
+            <p>@Model.Classificacao.Nome</p>
+        }
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

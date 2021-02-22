@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BibliotecaApp.Models
+namespace BibliotecaApp.Models.Data
 {
     public class BibliotecaDbContext : IdentityDbContext<Leitor>
     {
         public DbSet<Obra> Obras { get; set; }
+        public DbSet<Autor> Autores { get; set; }
         public DbSet<Classificacao> Classificacoes { get; set; }
         public DbSet<Nucleo> Nucleos { get; set; }
         public DbSet<Requisicao> Requisicoes { get; set; }

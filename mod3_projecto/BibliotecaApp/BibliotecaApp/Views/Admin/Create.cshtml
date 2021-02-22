@@ -1,0 +1,53 @@
+﻿@{ 
+    Layout = "_LayoutLogin";
+}
+@model LeitorViewModel
+
+<h1>Registo</h1>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NomeUser"></label>
+        <span class="text-info">O nome de usuário deverá ser composto por caracteres alfanuméricos apenas</span>
+        <input asp-for="NomeUser" class="form-control" />
+        <span asp-validation-for="NomeUser" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NomeCompleto"></label>
+        <input asp-for="NomeCompleto" class="form-control" />
+        <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Morada"></label>
+        <input asp-for="Morada" class="form-control" />
+        <span asp-validation-for="Morada" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CC"></label>
+        <input asp-for="CC" class="form-control" />
+        <span asp-validation-for="CC" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NucleoRegisto">Nucleo de Registo</label>
+        <select asp-for="NucleoRegisto" asp-items="@Model.Nucleos"></select>
+        <span asp-validation-for="NucleoRegisto" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Criar Leitor</button>
+</form>
