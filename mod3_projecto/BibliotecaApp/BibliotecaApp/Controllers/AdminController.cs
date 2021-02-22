@@ -39,7 +39,7 @@ namespace BibliotecaApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(LeitorViewModel leitorModel)
+        public async Task<IActionResult> Create(LeitorViewModel leitorModel)
         {
             if(ModelState.IsValid)
             {
@@ -52,10 +52,11 @@ namespace BibliotecaApp.Controllers
                     CC = leitorModel.CC,
                     NucleoRegisto = _nucleosRepository.GetNucleosById(leitorModel.NucleoRegisto)
                 };
-                IdentityResult createUserResult = _userManager.CreateAsync(novoLeitor, leitorModel.Password).Result;
+                IdentityResult createUserResult = await _userManager.CreateAsync(novoLeitor, leitorModel.Password);
 
                 if( createUserResult.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(novoLeitor, "User");
                     return RedirectToAction("Index");
                 }
                 else
@@ -68,9 +69,9 @@ namespace BibliotecaApp.Controllers
             return View(leitorModel);
         }
 
-        public IActionResult Update(string id)
+        public async Task<IActionResult> Update(string id)
         {
-            var leitor = _userManager.FindByIdAsync(id).Result;
+            var leitor = await _userManager.FindByIdAsync(id);
             if (leitor != null)
                 return View(leitor);
             else

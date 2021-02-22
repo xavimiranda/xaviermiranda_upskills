@@ -1,1 +1,50 @@
-﻿
+﻿@model AddAuthorViewModel
+
+<h1>Gerir Autores para <i>@Model.Obra.Titulo</i></h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.ObraId" />
+
+    <h2>Adicionar</h2>
+    <table class="table table-striped table-sm">
+        @if (Model.NonAutores.Count() == 0)
+        {
+            <tr><td colspan="2">Todos os Autores são autores desta obra</td></tr>
+        }
+        else
+        {
+            @foreach (Autor autor in Model.NonAutores)
+            {
+                <tr>
+                    <td>@autor.Nome</td>
+                    <td>
+                        <input type="checkbox" name="AddAuthors" value="@autor.Id">
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <h2>Remover</i></h2>
+    <table class="table table-striped table-sm">
+        @if (Model.AreAutores.Count() == 0)
+        {
+            <tr><td colspan="2">Nenhum autor é autor desta obra</td></tr>
+        }
+        else
+        {
+            @foreach (Autor autor in Model.AreAutores)
+            {
+                <tr>
+                    <td>@autor.Nome</td>
+                    <td>
+                        <input type="checkbox" name="RemoveAuthors" value="@autor.Id">
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <button type="submit" class="btn btn-primary">Guardar alterações</button>
+</form>

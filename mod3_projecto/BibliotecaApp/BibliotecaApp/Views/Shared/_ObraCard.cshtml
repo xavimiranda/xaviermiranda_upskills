@@ -1,6 +1,6 @@
 ﻿@model Obra
-
-<div class="card" style="width: 18rem;">
+ 
+<div class="card m-1" style="width: 18rem;">
     <img src="@Model.Imagem" class="card-img-top" alt="@Model.Titulo">
     <div class="card-body">
         <h5 class="card-title">@Model.Titulo</h5>
@@ -10,9 +10,11 @@
         }
         <p><b>@Model.AnoPublicação</b></p>
         @if (Model.Classificacao != null)
-        { 
+        {
             <p>@Model.Classificacao.Nome</p>
         }
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a class="btn btn-primary">Requesitar</a>
+        <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@Model.Id">Detalhes</a>
+       
     </div>
 </div>

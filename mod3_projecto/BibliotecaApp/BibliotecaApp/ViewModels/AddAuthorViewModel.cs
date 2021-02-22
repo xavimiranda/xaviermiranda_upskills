@@ -8,7 +8,12 @@ namespace BibliotecaApp.ViewModels
 {
     public class AddAuthorViewModel
     {
-        public IEnumerable<Autor> Autores { get; set; }
+        public List<Autor> AreAutores { get; set; }
+        public List<Autor> NonAutores { get; set; }
         public int ObraId { get; set; }
+        public Obra Obra { get; set; }
+
+        public int[] AddAuthors { get; set; }
+        public int[] RemoveAuthors { get; set; }
     }
 }

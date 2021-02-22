@@ -79,9 +79,47 @@ namespace BibliotecaApp.Controllers
                 return RedirectToPage("Error");
         }
 
-        //public IActionResult AddAuthor(int id)
-        //{
+        public IActionResult AddAutor(int id)
+        {
+            var areAutores = new List<Autor>();
+            var notAutores = new List<Autor>();
+            var obra = _obrasRepository.GetObraById(id);
+            foreach(var autor in _autoresRepository.GetAllAutoresWithObras())
+            {
+                if (_autoresRepository.IsAuthorOf(autor, id))
+                {
+                    areAutores.Add(autor);
+                }
+                else
+                {
+                    notAutores.Add(autor);
+                }
+            }
+            var viewModel = new AddAuthorViewModel
+            {
+                ObraId = id,
+                Obra = obra,
+                AreAutores = areAutores,
+                NonAutores = notAutores
+            };
+            return View(viewModel);
+        }
 
-        //}
+        [HttpPost]
+        public IActionResult AddAutor(AddAuthorViewModel viewModel)
+        {
+            var obra = _obrasRepository.GetObraById(viewModel.ObraId);
+            foreach(var authorId in viewModel.AddAuthors ?? new int[] { })
+            {
+                var autor = _autoresRepository.GetAutorByIdWithObras(authorId);
+                _autoresRepository.AddObra(autor, obra.Id);
+            }
+            foreach (var authorId in viewModel.RemoveAuthors ?? new int[] { })
+            {
+                var autor = _autoresRepository.GetAutorByIdWithObras(authorId);
+                _autoresRepository.RemoveObra( autor, obra.Id);
+            }
+            return RedirectToAction("Details", new { id =  obra.Id});
+        }
     }
 }

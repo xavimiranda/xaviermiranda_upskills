@@ -15,8 +15,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Procurar</button>
 </form>
-
-@foreach (var obra in Model.Obras)
-{
-    <partial name="_ObraCard" model="@obra" />
-}
+<div class="container d-flex">
+    @foreach (var obra in Model.Obras)
+    {
+        <partial name="_ObraCard" model="@obra" />
+    }
+</div>

@@ -1,24 +1,35 @@
 ﻿@model Obra 
 
 <div>
-    <img src="@Model.Imagem" alt="@Model.Titulo">
+    <img class="mx-auto d-block" src="@Model.Imagem" alt="@Model.Titulo">
     <div>
-        <h5 class="card-title">@Model.Titulo</h5>
+        <h4>@Model.Titulo</h4>
         @foreach (var autor in Model.Autores)
         {
-            <h6 class="card-subtitle mb-2 text-muted">@autor.Nome</h6>
+            <h5 class="mb-2 text-muted">@autor.Nome</h5>
         }
-        <p><b>@Model.AnoPublicação</b></p>
+        <h6>@Model.AnoPublicação</h6>
         @if (Model.Classificacao != null)
         {
             <p>@Model.Classificacao.Nome</p>
         }
+        <h6>Sinopse</h6>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi arcu metus, luctus non mauris vel, condimentum dignissim felis. Donec urna ante, ultricies non dignissim vel, luctus eu magna. Etiam aliquet velit eu leo sollicitudin, sit amet facilisis velit tincidunt. Aliquam facilisis mauris eu sodales bibendum. Donec ornare hendrerit felis id imperdiet. Sed luctus velit vel malesuada ultricies. Sed consequat massa ac ex ornare gravida. Phasellus iaculis neque nec sodales efficitur. Vestibulum congue iaculis odio, quis consectetur mauris varius eu. Curabitur euismod neque sed arcu malesuada tempus. Cras eu finibus magna. Morbi tristique ipsum eu tempor faucibus. Nullam ipsum libero, iaculis ac blandit eu, tempus et ipsum. Donec ex tellus, viverra a iaculis ut, tincidunt et dolor. Maecenas luctus turpis sem, vitae facilisis sem scelerisque non. Aenean sit amet tempor nisi, nec porttitor diam.
+
+            Phasellus condimentum elit tellus, eget efficitur ipsum auctor et. Aliquam eu magna gravida eros congue lacinia. Vivamus maximus est ac mattis porttitor. Curabitur eget varius ex. Sed porta malesuada maximus. Suspendisse sollicitudin velit ligula, in feugiat nulla aliquam id. Suspendisse ac purus non mi convallis pretium a vel neque. Integer molestie nunc eget posuere tempor. Aenean lobortis commodo augue, a eleifend sem rutrum ac. Phasellus commodo vel nisl nec mattis.
+        </p>
     </div>
+    <a class="btn btn-primary" asp-controller="">Requesitar</a>
+    <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+    @if (User.IsInRole("Admin"))
+    {
     <div>
-        @if( Model.Autores.Count == 0 )
+        @if (Model.Autores.Count == 0)
         {
             <p class="text-info">Esta obra não tem um Autor associado. Adicione um autor clicando no botão abaixo.</p>
         }
-        <a asp-action="AddAutor" asp-route-id="@Model.Id" class="btn btn-primary">Adicionar autores a esta obra</a>
+        <a asp-action="AddAutor" asp-route-id="@Model.Id" class="btn btn-primary">Gerir autores desta obra</a>
     </div>
+    }
 </div>

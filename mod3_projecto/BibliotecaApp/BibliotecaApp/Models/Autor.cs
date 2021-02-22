@@ -21,5 +21,6 @@ namespace BibliotecaApp.Models
         public DateTime? Obito { get; set; }
 
         public List<Obra> Obras { get; set; } = new List<Obra>();
+
     }
 }

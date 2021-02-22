@@ -89,6 +89,7 @@ namespace BibliotecaApp.Controllers
 
                 if (createUserResult.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(novoLeitor, "User");
                     return RedirectToAction("Login");
                 }
                 else
