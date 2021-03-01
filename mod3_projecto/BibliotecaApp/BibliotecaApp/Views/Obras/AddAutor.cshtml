@@ -2,6 +2,8 @@
 
 <h1>Gerir Autores para <i>@Model.Obra.Titulo</i></h1>
 
+<a class="btn btn-primary" asp-action="CreateAutor" asp-route-redirectUrl="@Url.Action("AddAutor", "Obras")">Criar novo Autor</a>
+
 <div asp-validation-summary="All" class="text-danger"></div>
 
 <form method="post">
@@ -17,6 +19,7 @@
         {
             @foreach (Autor autor in Model.NonAutores)
             {
+                
                 <tr>
                     <td>@autor.Nome</td>
                     <td>
@@ -27,7 +30,7 @@
         }
     </table>
 
-    <h2>Remover</i></h2>
+    <h2>Remover</h2>
     <table class="table table-striped table-sm">
         @if (Model.AreAutores.Count() == 0)
         {

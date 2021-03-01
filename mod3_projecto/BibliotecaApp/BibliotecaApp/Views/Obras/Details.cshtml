@@ -20,7 +20,10 @@
             Phasellus condimentum elit tellus, eget efficitur ipsum auctor et. Aliquam eu magna gravida eros congue lacinia. Vivamus maximus est ac mattis porttitor. Curabitur eget varius ex. Sed porta malesuada maximus. Suspendisse sollicitudin velit ligula, in feugiat nulla aliquam id. Suspendisse ac purus non mi convallis pretium a vel neque. Integer molestie nunc eget posuere tempor. Aenean lobortis commodo augue, a eleifend sem rutrum ac. Phasellus commodo vel nisl nec mattis.
         </p>
     </div>
-    <a class="btn btn-primary" asp-controller="">Requesitar</a>
+    @if (Context.Session.Keys.Contains("nucleo"))
+    {
+        <a class="btn btn-primary" asp-controller="">Requesitar</a>
+    }
     <a class="btn btn-secondary" asp-action="Index">Voltar</a>
     @if (User.IsInRole("Admin"))
     {

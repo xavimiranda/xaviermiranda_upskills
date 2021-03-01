@@ -1,0 +1,107 @@
+﻿@model LeitoresViewModel
+@section SubNavBar
+{
+    <nav class="spaced-from-top navbar navbar-light bg-white border-bottom box-shadow">
+        <div class="container">
+            <div class="navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="subnavbar navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a asp-route-viewOption="todos">Todos os Leitores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-route-viewOption="inactivos">Inactivos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-route-viewOption="suspensos">Suspensos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+}
+@{ 
+    string titulo;
+    switch (Context.Request.Query["viewOption"])
+    {
+        case "inactivos":
+            titulo = "Utilizadores Inactivos";
+            break;
+        case "suspensos":
+                titulo = "Utilizadores Suspensos";
+            break;
+        default:
+            titulo = "Todos os Utilizadores";
+            break;
+    }
+    }
+<h1>@titulo</h1>
+@if (Model.Leitores.Count() == 0)
+{
+    <div class="text-muted">Não existem leitores para o critério selecionado.</div>
+}
+else
+{
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Leitor</th>
+                <th scope="col">Requisicoes Activas</th>
+                <th scope="col">Atrasos</th>
+                <th scope="col">Suspenso</th>
+                <th scope="col">Suspender/Reactivar</th>
+                <th scope="col">Cancelar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var leitor in Model.Leitores)
+            {
+                <tr>
+                    <td><a asp-controller="User" asp-route-username="@leitor.UserName">@leitor.Nome</a></td>
+                    <td>@Model.RequisicoesActivas[leitor.Id]</td>
+                    <td>@leitor.Atrasos</td>
+                    @{ var estado = leitor.Suspenso == true ? "Suspenso" : "Activo"; }
+                    <td>@estado</td>
+                    @if (leitor.Suspenso)
+                    {
+                        <td><a class="btn btn-outline-primary btn-sm" asp-action="Reactivar" asp-route-id="@leitor.Id">Reactivar</a></td>
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-outline-danger btn-sm" asp-action="Suspender" asp-route-id="@leitor.Id">Suspender</a></td>
+                    }
+                    <td>
+                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarModal">
+                            Cancelar
+                        </button>
+                    </td>
+                </tr>
+                <!--Apagar Modal-->
+                <div class="modal fade" id="apagarModal" tabindex="-1" aria-labelledby="apagarModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="apagarModalLabel">Cancelar Inscrição</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Ao confimar esta acção o leitor será apagado da nossa base de dados. Esta acção é irreversível!</p>
+                                <ul>
+                                    <li><b>Leitor: </b> @leitor.Nome</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a class="btn btn-outline-danger" asp-action="Apagar" asp-route-id="@leitor.Id">Apagar Utilizador</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </tbody>
+
+    </table>
+}
+

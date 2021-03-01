@@ -1,20 +1,35 @@
-﻿@model Obra
+﻿@model ObraCopiasViewModel
+@using Microsoft.AspNetCore.Http 
  
 <div class="card m-1" style="width: 18rem;">
-    <img src="@Model.Imagem" class="card-img-top" alt="@Model.Titulo">
+    <img src="@Model.Obra.Imagem" class="card-img-top" alt="@Model.Obra.Titulo">
     <div class="card-body">
-        <h5 class="card-title">@Model.Titulo</h5>
-        @foreach (var autor in Model.Autores)
+        <h5 class="card-title">@Model.Obra.Titulo</h5>
+        @foreach (var autor in Model.Obra.Autores)
         {
             <h6 class="card-subtitle mb-2 text-muted">@autor.Nome</h6>
         }
-        <p><b>@Model.AnoPublicação</b></p>
-        @if (Model.Classificacao != null)
+        <p><b>@Model.Obra.AnoPublicação</b></p>
+        @if (Model.Obra.Classificacao != null)
         {
-            <p>@Model.Classificacao.Nome</p>
+            <p>@Model.Obra.Classificacao.Nome</p>
         }
-        <a class="btn btn-primary">Requesitar</a>
-        <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@Model.Id">Detalhes</a>
-       
+        @if (Model.NumCopias != 0)
+        {
+            <p><b>Cópias Disponíveis: </b>@Model.NumCopias</p>
+            <a class="btn btn-primary" asp-controller="User"
+               asp-action="Requisitar"
+               asp-route-obraId="@Model.Obra.Id"
+               asp-route-nucleoId="@Context.Session.GetString("nucleo")">
+                Requisitar
+            </a>
+        }
+        else
+        {
+            <p>Selecione um núcleo para poder requisitar obras.</p>
+        }
+
+        <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@Model.Obra.Id">Detalhes</a>
+
     </div>
 </div>

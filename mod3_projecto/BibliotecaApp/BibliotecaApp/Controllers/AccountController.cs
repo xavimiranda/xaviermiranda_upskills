@@ -36,6 +36,12 @@ namespace BibliotecaApp.Controllers
             return View(login);
         }
 
+        [AllowAnonymous]
+        public IActionResult Suspenso()
+        {
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -47,9 +53,11 @@ namespace BibliotecaApp.Controllers
                 
                 if (leitor != null)
                 {
+                    if (leitor.Suspenso)
+                        return RedirectToAction("Suspenso");
                     await _signInManager.SignOutAsync();
                     var signInResult = await _signInManager.PasswordSignInAsync(leitor, login.Password, false, false);
-                    
+
                     if (signInResult.Succeeded)
                         return Redirect(login.ReturnUrl ?? "/");
                 }
@@ -83,7 +91,7 @@ namespace BibliotecaApp.Controllers
                     Email = leitorModel.Email,
                     Morada = leitorModel.Morada,
                     CC = leitorModel.CC,
-                    NucleoRegisto = _nucleosRepository.GetNucleosById(leitorModel.NucleoRegisto)
+                    NucleoRegisto = _nucleosRepository.GetNucleoById(leitorModel.NucleoRegisto)
                 };
                 IdentityResult createUserResult = await _userManager.CreateAsync(novoLeitor, leitorModel.Password);
 

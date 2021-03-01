@@ -15,6 +15,6 @@ namespace BibliotecaApp.Models
         public Nucleo Nucleo { get; set; }
         public DateTime DataRequisicao { get; set; }
         public DateTime DataLimite { get; set; }
-        public DateTime DataEntregue { get; set; }
+        public DateTime? DataEntregue { get; set; }
     }
 }

@@ -27,16 +27,25 @@ namespace BibliotecaApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(options => 
+                {
+                    options.IdleTimeout = TimeSpan.FromMinutes(5);
+                });
             services.AddDbContext<BibliotecaDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BibliotecaConnectionString")
             ));
+
             services.AddScoped<INucleosRepository, NucleosRepository>();
             services.AddScoped<IObrasRepository, ObrasRepository>();
             services.AddScoped<IClassificacaoRepository, ClassificacaoRepository>();
             services.AddScoped<IAutoresRepository, AutoresRepository>();
+            services.AddScoped<IRequisicoesRepository, RequisicoesRepository>();
+            services.AddScoped<ILeitorRepository, LeitorRepository>();
+
             services.AddIdentity<Leitor, IdentityRole>().AddEntityFrameworkStores<BibliotecaDbContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
             
         }
 
@@ -58,9 +67,11 @@ namespace BibliotecaApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -6,6 +6,7 @@
         <tr>
             <th scope="col">Nucleo</th>
             <th scope="col">Morada</th>
+            <th scope="col">Gerir Obras</th>
             <th scope="col">Remover</th>
         </tr>
     </thead>
@@ -15,7 +16,8 @@
             <tr>
                 <td>@nucleo.Nome</td>
                 <td>@nucleo.Morada</td>
-                <td><a asp-action="Remove" asp-route-id="@nucleo.Id"><i class="bi bi-trash"></i></a><td>
+                <td><a class="btn btn-sm btn-outline-primary" asp-action="Obras" asp-route-id="@nucleo.Id">Gerir Obras</a></td>
+                <td><a class="btn btn-sm btn-danger" asp-action="Remove" asp-route-id="@nucleo.Id">Remover</a><td>
             </tr>
         }
     </tbody>

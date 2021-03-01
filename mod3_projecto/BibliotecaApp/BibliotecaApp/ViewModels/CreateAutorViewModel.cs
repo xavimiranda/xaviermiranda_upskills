@@ -1,27 +1,23 @@
-﻿using System;
+﻿using BibliotecaApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BibliotecaApp.Models
+namespace BibliotecaApp.ViewModels
 {
-    public class Autor
+    public class CreateAutorViewModel
     {
-        [Key]
-        public int Id { get; set; }
+        public string RedirectUrl { get; set; }
 
         [Required]
         public string Nome { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
         public DateTime Nascimento { get; set; }
 
-        [DataType(DataType.DateTime), ]
         public DateTime? Obito { get; set; }
-
-        public List<Obra> Obras { get; set; } = new List<Obra>();
 
     }
 }

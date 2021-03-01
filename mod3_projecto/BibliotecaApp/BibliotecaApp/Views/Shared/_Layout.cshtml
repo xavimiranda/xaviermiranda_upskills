@@ -6,12 +6,12 @@
     <title>@ViewData["Title"] - BibliotecaApp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BibliotecaApp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -32,19 +32,24 @@
                         {
                             <partial name="_UserNavbar" />
                         }
+                        @if (Context.Session.Keys.Contains("nucleo"))
+                        { 
+                            <vc:nucleo-info></vc:nucleo-info>
+                        }
                         <vc:login-info></vc:login-info>
                     </ul>
                 </div>
             </div>
         </nav>
+        @RenderSection("SubNavBar", required: false)
     </header>
-    <div class="container">
+    <div class="container spaced-from-top main-container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted spaced-from-top">
         <div class="container">
             &copy; 2021 - BibliotecaApp
         </div>

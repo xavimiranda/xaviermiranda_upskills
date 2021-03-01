@@ -25,6 +25,12 @@ namespace BibliotecaApp.Models.Data
 
         public IEnumerable<Obra> GetAllObras() => _dbContext.Obras.Include(o => o.Autores);
 
+        public IEnumerable<Obra> GetAllObrasFromNucleo(int nucleoId)
+        {
+            var selection = _dbContext.Set<ObrasNucleo>().Where(on => on.NucleoId == nucleoId && on.NumCopias > 0).ToList();
+            return selection.Select(s => _dbContext.Obras.Find(s.ObraId));
+        }
+
         public Obra GetObraById(int id) => _dbContext.Obras.Include(o => o.Autores).FirstOrDefault(o => o.Id == id);
 
         public void RemoveObra(int id)
@@ -40,13 +46,21 @@ namespace BibliotecaApp.Models.Data
 
             if (autor != null)
             {
-                result.AddRange(_dbContext.Obras.Include(o => o.Autores.Where(a => a.Nome.ToLower().Contains(autor))));
+                //result = _dbContext.Obras.Include(o => o.Autores.Where(a => a.Nome.ToLower().Contains(autor))).ToList();
+                foreach(var obra in _dbContext.Obras.Include(o => o.Autores))
+                {
+                    foreach (var a in obra.Autores)
+                    {
+                        if (a.Nome.ToLower().Contains(autor))
+                            result.Add(obra);
+                    }
+                }
             }
             if (titulo != null)
             {
                 result = result.Count == 0 ? 
                     _dbContext.Obras.Include(o => o.Autores).Where(o => o.Titulo.ToLower().Contains(titulo)).ToList() :
-                    result.Where(o => o.Titulo.Contains(titulo)).ToList();
+                    result.Where(o => o.Titulo.ToLower().Contains(titulo)).ToList();
             }
             if (ano != null)
                 result = result.Count == 0 ?
@@ -54,6 +68,15 @@ namespace BibliotecaApp.Models.Data
                     result.Where(o => o.AnoPublicação == ano).ToList();
 
             return result;
+        }
+
+        public IEnumerable<Obra> SearchInNucleo(int nucleoId, string? titulo, string? autor, int? ano)
+        {
+            var obras = Search(titulo, autor, ano).ToList();
+            var selection = _dbContext.Set<ObrasNucleo>().Where(on => on.NucleoId == nucleoId && on.NumCopias > 0).ToList();
+            var result = obras.Join(selection, o => o.Id, s => s.ObraId, (o, s) => new { o, s });
+            return result.Select(r => r.o);
+           
         }
     }
 }

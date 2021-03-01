@@ -1,0 +1,26 @@
+﻿@model ObrasNucleoViewModel
+
+<h1>Gerir Obras para @Model.Nucleo.Nome</h1>
+<form method="post">
+
+    
+    <table class="table table-sm table-striped">
+        <input asp-for="NucleoId" type="hidden" value="@Model.Nucleo.Id"/>
+        @foreach (var numCopias in Model.NumCopias)
+        { 
+            <tr>
+                <td>
+                    <label>@numCopias.Obra.Titulo</label>
+                <td>
+                    <input type="hidden" name="Obras" value="@numCopias.Obra.Id" />
+                    <input type="number" name="NovoNumeroCopias" value="@numCopias.Num" />
+                </td>
+
+            </tr>
+        }
+    </table>
+  
+
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="Index">Voltar</a>
+</form>

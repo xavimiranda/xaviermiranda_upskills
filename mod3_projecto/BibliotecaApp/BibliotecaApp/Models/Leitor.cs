@@ -26,5 +26,7 @@ namespace BibliotecaApp.Models
 
         [Range(0, 4)]
         public int Atrasos { get; set; }
+
+        public DateTime? UltimaRequesicao { get; set; }
     }
 }

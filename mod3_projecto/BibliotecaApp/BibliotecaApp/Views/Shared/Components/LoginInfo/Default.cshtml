@@ -1,6 +1,6 @@
 ﻿@model Leitor
 <li class="nav-item">
-    <a class="nav-link text-dark">@Model.UserName</a>
+    <a class="nav-link text-dark" asp-controller="User" asp-action="Index" asp-route-username="@Model.UserName">@Model.UserName</a>
 </li>
 <li class="nav-item">
     <a class="btn btn-outline-dark btn-sm" asp-controller="Account" asp-action="Logout">Logout</a>

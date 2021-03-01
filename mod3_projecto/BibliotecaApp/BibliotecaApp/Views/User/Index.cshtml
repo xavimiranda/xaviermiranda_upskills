@@ -1,0 +1,87 @@
+﻿@model UserViewModel
+@using Microsoft.AspNetCore.Http
+
+<h1>@Model.Leitor.UserName</h1>
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="text-danger">@TempData["ErrorMessage"]</div>
+}
+
+<div class="container">
+    <h2>As suas requisições</h2>
+    <h4>Activas</h4>
+    @if (Model.RequisicoesActivas.Count() == 0)
+    {
+        <p class="text-muted">Não tem requisicões activas</p>
+    }
+    else
+    {
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Data Limite</th>
+                    <th scope="col">Obra</th>
+                    <th scope="col">Nucleo</th>
+                    <th scope="col">Devolver</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var requisicao in Model.RequisicoesActivas)
+                {
+                      
+                    string estado = "";
+                    TimeSpan tempoRestante = requisicao.DataLimite - DateTime.UtcNow;
+
+                    if (tempoRestante.TotalDays < 0)
+                        estado = "ATRASO";
+                    else if (tempoRestante.TotalDays < 3)
+                        estado = "DEVOLUÇÃO URGENTE";
+                    else if (tempoRestante.TotalDays < 5)
+                        estado = "Devolver em breve";
+                            
+                    <tr>
+                        <td>@requisicao.DataLimite.ToShortDateString() @estado</td>
+                        <td>@requisicao.Obra.Titulo</td>
+                        <td>@requisicao.Nucleo.Nome</td>
+                        @{ string nucleoSessionString = Context.Session.GetString("nucleo"); }
+                        @if (nucleoSessionString == null)
+                        {
+                            <td class="text-danger">Selecione um núcleo para fazer devoluções</td>
+                        }
+                        else
+                        {
+                            <td><a class="btn btn-outline-primary btn-sm" asp-action="Devolver" asp-route-requisicaoId="@requisicao.Id" asp-route-nucleoId="@nucleoSessionString">Devolver</a></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    <h4>Entregues</h4>
+    @if (Model.RequisicoesEntregues.Count() == 0)
+    {
+        <p class="text-muted">Não tem requisicões entregues</p>
+    }
+    else
+    {
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Entregue Em</th>
+                    <th scope="col">Obra</th>
+                    <th scope="col">Nucleo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var requisicao in Model.RequisicoesEntregues)
+                {
+                    <tr>
+                        <td>@requisicao.DataEntregue.Value.ToShortDateString()</td>
+                        <td>@requisicao.Obra.Titulo</td>
+                        <td>@requisicao.Nucleo.Nome</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

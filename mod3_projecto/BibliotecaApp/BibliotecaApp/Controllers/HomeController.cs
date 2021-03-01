@@ -1,6 +1,9 @@
 ﻿using BibliotecaApp.Models;
+using BibliotecaApp.Models.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,22 +17,25 @@ namespace BibliotecaApp.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        
+        private readonly INucleosRepository _nucleosRepository;
 
-        public HomeController()
+        public HomeController(INucleosRepository nucleosRepository)
         {
-            
+            _nucleosRepository = nucleosRepository;
         }
 
         
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<SelectListItem> nucleos = _nucleosRepository.GetAllNucleos().Select(n => new SelectListItem { Text = n.Nome, Value = n.Id.ToString() });
+            return View(nucleos);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(string nucleo)
         {
-            return View();
+            HttpContext.Session.SetString("nucleo", nucleo);
+            return RedirectToAction("Index", "Obras");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

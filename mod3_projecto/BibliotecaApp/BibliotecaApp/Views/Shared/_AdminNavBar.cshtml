@@ -6,6 +6,17 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" asp-controller="Obras" asp-action="Index">Procurar</a>
             <a class="dropdown-item" asp-controller="Obras" asp-action="Create">Adicionar uma obra</a>
+            <a class="dropdown-item" asp-controller="Obras" asp-action="CreateAutor" asp-route-redirectUrl="/Obras">Adicionar um Autor</a>
+        </div>
+    </div>
+</li>
+<li class="nav-item">
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Leitores
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" asp-controller="Leitor" asp-action="Index">Lista de Leitores</a>
         </div>
     </div>
 </li>
